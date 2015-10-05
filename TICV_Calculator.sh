@@ -19,15 +19,15 @@ do
 	printf "$seginfo$ticv" >> $segticv;                            # Prints current contents (GMV WMV CSFV) of each "*_seg8.txt" file followed by the newly-calculated TICV value into a temporary "TICV_*_seg8.txt" file
 done;
 
-printf "  GMV  |  WMV  |  CSFV |  TICV\n\n" >> All_TICV_Values.txt;    # Adds value header labels to newly aggregate output file
+printf "  GMV  |  WMV  |  CSFV |  TICV\n\n" >> All_TICV_Values.txt;    # Adds value header labels to new aggregate output file
 
 for f in TICV_*                                                        # Looks into all files with prefix "TICV_" {$f} within your working directory
 do
 	segfile=${f:6:${#f}-22};                                       # Truncates the existing filename (e.g., "TICV_p11111_123_02_MPRAGE_seg8.txt" --> "11111_123_02")
 	ticvinfo=$(cat $f);                                            # Refers to current contents of each "TICV_*_seg8.txt" file
 	printf "$segfile\n$ticvinfo\n\n" >> All_TICV_Values.txt;       # Prints shortened filename of scan (e.g., "TICV_p11111_053_01_MPRAGE_seg8.txt" --> "11111_053_01") followed by 
-done;                                                                  #   all four values for GMV, WMV, CSFV, and TICV on the next line, followed by a line break
-
+done;                                                                  #   all four values for GMV, WMV, CSFV, and TICV on the next line (followed by a line break) to the aggregate
+                                                                       #   output file titled "All_TICV_Values.txt"
 rm TICV_*;                                                             # Cleans up the leftover "TICV_*_seg8.txt" files
 open All_TICV_Values.txt;                                              # Opens All_TICV_Values.txt file in default text editor
 #

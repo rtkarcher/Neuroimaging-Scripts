@@ -19,15 +19,13 @@ do
 	printf "$seginfo$ticv" >> $segticv; 
 done;
 
-touch All_TICV_Values.txt
 printf "  GMV  |  WMV  |  CSFV |  TICV\n\n" >> All_TICV_Values.txt;
 
 for f in TICV_*
 do
 	segfile=${f:6:${#f}-22};
 	ticvinfo=$(cat $f);
-	outfile=All_TICV_Values.txt;
-	printf "$segfile\n$ticvinfo\n\n" >> $outfile;
+	printf "$segfile\n$ticvinfo\n\n" >> All_TICV_Values.txt; 
 done;
 rm TICV_*;
 open All_TICV_Values.txt;

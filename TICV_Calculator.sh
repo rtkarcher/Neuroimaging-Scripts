@@ -1,15 +1,14 @@
 #!/bin/bash
-# =====================================================
-### 		Total Intracranial Volume Calculator	###
-# =====================================================
+# ======================================================
+####      Total Intracranial Volume Calculator      ####
+# ======================================================
 #
 # Polls all files with the suffix "_seg8.txt" within the working directory and calculates total intracranial volume (TICV) of all subjects' scans within a single output file ("All_TICV_Values.txt")
 #
-### Single-line command equivalents:
-### $ for i in *_seg8.txt; do segticv="TICV_"$i; seginfo=$(cat $i); ticv=$(awk '{print $1+$2+$3}' $i); printf "$seginfo$ticv" >> $segticv; done;
-### $ touch All_TICV_Values.txt && printf "  GMV  |  WMV  |  CSFV |  TICV\n\n" >> All_TICV_Values.txt
-### $ for f in TICV_*; do segfile=${f:6:${#f}-22}; ticvinfo=$(cat $f); printf "$segfile\n$ticvinfo\n" >> All_TICV_Values.txt; done
-#
+## Single-line command equivalents:
+#### $ for i in *_seg8.txt; do segticv="TICV_"$i; seginfo=$(cat $i); ticv=$(awk '{print $1+$2+$3}' $i); printf "$seginfo$ticv" >> $segticv; done;
+#### $ touch All_TICV_Values.txt && printf "  GMV  |  WMV  |  CSFV |  TICV\n\n" >> All_TICV_Values.txt
+#### $ for f in TICV_*; do segfile=${f:6:${#f}-22}; ticvinfo=$(cat $f); printf "$segfile\n$ticvinfo\n" >> All_TICV_Values.txt; done
 #
 #
 for i in *_seg8.txt

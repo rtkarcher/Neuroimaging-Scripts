@@ -29,6 +29,14 @@ do
 done;                                                                  #   all four values for GMV, WMV, CSFV, and TICV on the next line (followed by a line break) to the aggregate
                                                                        #   output file titled "All_TICV_Values.txt"
 rm TICV_*;                                                             # Cleans up the leftover "TICV_*_seg8.txt" files
-open All_TICV_Values.txt;                                              # Opens All_TICV_Values.txt file in default text editor
+if [ "$(uname)" == "Darwin" ]; then                                    # Checks to see whether script is running on Linux/UNIX or Mac OS X, then opens the All_TICV_Values.txt file in the OS' default text editor
+    # Do something under Mac OS X platform
+	open All_TICV_Values.txt;    
+    elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    # Do something under Linux platform
+	xdg-open All_TICV_Values.txt;
+  # elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+    # Do something under Windows NT platform
+fi
 #
 #

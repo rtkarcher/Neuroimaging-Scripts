@@ -36,8 +36,6 @@ if [ "$(uname)" == "Darwin" ]; then
 	open All_TICV_Values.txt;
     elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	xdg-open All_TICV_Values.txt;
-  # elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
-    # Do something under Windows NT platform
 fi
 #
 #
@@ -64,4 +62,3 @@ fi
 # 33. Checks to see whether script is running on Linux/UNIX or Mac OS X, then opens the All_TICV_Values.txt file in the OS' default text editor
 # 34. Does something under Mac OS X platform
 # 36. Does something under Linux platform
-# 38. Does something under Windows/Cygwin platform

@@ -1,2 +1,4 @@
 # SPM-Scripts
-Batch scripts for renaming/converting/mining SPM/VBM8 output files
+===
+Scripts for batching, renaming, converting, and parsing output files from SPM, FSL/Freesurfer, etc.
+----

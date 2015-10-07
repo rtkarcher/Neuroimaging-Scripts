@@ -36,10 +36,10 @@ fi
 # Line-by-line:
 # ===============
 #
-# ln 9.   Sets aggregated output file name 
+# ln 9.    Sets aggregated output file name 
 # ln 10.   Looks into all files with suffix "_seg8.txt" {$i} within your working directory
 #
-# ln 12   Sets new "TICV_" prefix for temporary files generated 
+# ln 12    Sets new "TICV_" prefix for temporary files generated 
 # ln 13.   Refers to current contents of each "*_seg8.txt" file
 # ln 14    Calculates TICV value by adding the three existing values (GMV WMV CSFV) in the file
 # ln 15.   Prints current contents (GMV WMV CSFV) of each "*_seg8.txt" file followed by the newly-calculated TICV value into a temporary "TICV_*_seg8.txt" file

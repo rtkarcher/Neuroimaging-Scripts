@@ -33,32 +33,32 @@ done;
 rm TICV_*;
 
 if [ "$(uname)" == "Darwin" ]; then
-	open All_TICV_Values.txt;
+	printf "\n\n     *            ..        *     *   \n  *     *       ......         *      \n            ..............            \n        ......................        \n*   ..............................    \n .................................... \n  ..................................  \n   ...... Calculating Volume ......   \n  ..................................  \n .................................... \n    ..............................    \n *      ......................      * \n    *       ..............     *      \n          *     ......      *     *   \n    *             ..           *      \n\n\n" && sleep 2 && open All_TICV_Values.txt;
     elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-	xdg-open All_TICV_Values.txt;
+	printf "\n\n     *            ..        *     *   \n  *     *       ......         *      \n            ..............            \n        ......................        \n*   ..............................    \n .................................... \n  ..................................  \n   ...... Calculating Volume ......   \n  ..................................  \n .................................... \n    ..............................    \n *      ......................      * \n    *       ..............     *      \n          *     ......      *     *   \n    *             ..           *      \n\n\n" && sleep 2 && xdg-open All_TICV_Values.txt;
 fi
 #
 #
 # Line-by-line Structural Breakdown:
 # ==================================
 # 
-# 14. Looks into all files with suffix "_seg8.txt" {$i} within your working directory
+# ln 14.  Looks into all files with suffix "_seg8.txt" {$i} within your working directory
 #
-# 16. Sets new "TICV_" prefix for temporary files generated 
-# 17. Refers to current contents of each "*_seg8.txt" file
-# 18. Calculates TICV value by adding the three existing values (GMV WMV CSFV) in the file
-# 19. Prints current contents (GMV WMV CSFV) of each "*_seg8.txt" file followed by the newly-calculated TICV value into a temporary "TICV_*_seg8.txt" file
+# ln 16.  Sets new "TICV_" prefix for temporary files generated 
+# ln 17.  Refers to current contents of each "*_seg8.txt" file
+# ln 18.  Calculates TICV value by adding the three existing values (GMV WMV CSFV) in the file
+# ln 19.  Prints current contents (GMV WMV CSFV) of each "*_seg8.txt" file followed by the newly-calculated TICV value into a temporary "TICV_*_seg8.txt" file
 #
-# 22. Adds value header labels to new aggregate output file
+# ln 22.  Adds value header labels to new aggregate output file
 #
-# 24. Looks into all files with prefix "TICV_" {$f} within your working directory
+# ln 24.  Looks into all files with prefix "TICV_" {$f} within your working directory
 #
-# 26. Truncates the existing filename (e.g., "TICV_p11111_123_02_MPRAGE_seg8.txt" --> "11111_123_02")
-# 27. Refers to current contents of each "TICV_*_seg8.txt" file
-# 28. Prints shortened filename of scan (e.g., "TICV_p11111_053_01_MPRAGE_seg8.txt" --> "11111_053_01") followed by all four values for GMV, WMV, CSFV, and TICV on the next line (followed by a line break) to the aggregate output file titled "All_TICV_Values.txt"
+# ln 26.  Truncates the existing filename (e.g., "TICV_p11111_123_02_MPRAGE_seg8.txt" --> "11111_123_02")
+# ln 27.  Refers to current contents of each "TICV_*_seg8.txt" file
+# ln 28.  Prints shortened filename of scan (e.g., "TICV_p11111_053_01_MPRAGE_seg8.txt" --> "11111_053_01") followed by all four values for GMV, WMV, CSFV, and TICV on the next line (followed by a line break) to the aggregate output file titled "All_TICV_Values.txt"
 #
-# 31. Cleans up the leftover "TICV_*_seg8.txt" files
+# ln 31.  Cleans up the leftover "TICV_*_seg8.txt" files
 #
-# 33. Checks to see whether script is running on Linux/UNIX or Mac OS X, then opens the All_TICV_Values.txt file in the OS' default text editor
-# 34. Does something under Mac OS X platform
-# 36. Does something under Linux platform
+# ln 33.  Checks to see whether script is running on Linux/UNIX or Mac OS X, then opens the All_TICV_Values.txt file in the OS' default text editor
+# ln 34.  Does something under Mac OS X platform
+# ln 36.  Does something under Linux platform

@@ -3,7 +3,7 @@
 ####      Total Intracranial Volume Calculator      ####
 # ======================================================
 #
-# Polls all files with the suffix "_seg8.txt" within the working directory and calculates total intracranial volume (TICV) of all subjects' scans within a single output file ("All_TICV_Values.txt")
+# Polls all files with the suffix "_seg8.txt" within the working directory and calculates total intracranial volume (TICV) of all subjects' scans within a single output file (titled "All_TICV_Values.txt" by default).
 #
 #
 output="All_TICV_Values.txt";
